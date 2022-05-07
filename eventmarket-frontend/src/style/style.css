@@ -1,0 +1,464 @@
+:root {
+    --primary-color: #5aa2ed;
+    --accent-color: #00ccff;
+}
+
+.App {
+    text-align: center;
+}
+
+.flex-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-card {
+    width: 200px;
+
+    box-shadow: 0 7px 14px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    padding: 10px;
+    margin: 10px;
+
+    border-radius: 5px;
+}
+
+.li_link{
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+ul {
+    display: table;
+    margin: 0 auto;
+    margin-top: 50%;
+}
+
+
+
+
+#event-market {
+    width: 200px;
+    color: #5aa2ed;
+    font-weight: 700;
+    font-size: 4em;
+    font-family: Inter, sans-serif;
+    margin-left: 40%;
+}
+
+.parent {
+    display: flex;
+    height: 500px; /* Or whatever */
+}
+
+.child {
+    margin: auto;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* input styling {{{ */
+input:not([type="radio"]), select {
+    padding: 12px 20px;
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    border-radius: 5px;
+}
+
+
+/* }}} */ 
+
+/* UI elements {{{ */
+
+.ui-button {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.3em;
+    transition: background-size 0.4s ease-in-out;
+    background-image: linear-gradient(var(--accent-color), var(--accent-color));
+    background-size: 0% 0.2em;
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    list-style-type: none;
+    background-color: #51a0f7;
+    font-family: Inter, sans-serif;
+    background-image: linear-gradient(#00ccff, #00ccff);
+    transition: background-size 0.4s ease-in-out;
+}
+
+.ui-button:hover {
+    background-size: 100% 0.2em;
+    width: 200px;
+    list-style-type: none;
+    padding: 20px;
+    background-color: #61b0ff;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: Inter, sans-serif;
+}
+
+
+
+.ui-button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+}
+
+.nav-buttons {
+    margin-left: auto;
+    order: 2;
+}
+
+.nav-buttons > a {
+    top: 40%;
+    position: relative;
+}
+
+
+p {
+    color: black;
+}
+
+.parent {
+    display: flex;
+    height: 500px; /* Or whatever */
+}
+
+.child {
+    margin: auto;
+}
+
+
+
+#form{
+    width: 100%;
+    height: 100%;
+    color: #5aa2ed;
+    font-weight: 700;
+    font-family: Inter, sans-serif;
+    background-color: #fff;
+}
+
+
+
+select {
+    float: right;
+    background-color: #fff;
+}
+
+textarea{
+    background-color: #fff;
+    float: right;
+}
+
+p, h1, label, img, input {
+    color: #5aa2ed;
+}
+
+.float input{
+    float: right;
+    background-color: #fff;
+}
+
+.float label{
+    float: left;
+}
+
+
+
+
+
+#tilbake{
+    list-style-type: none;
+    padding: 10px;
+    background-color: #51a0f7;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    color: white;
+    font-family: Inter, sans-serif;
+    background-image: linear-gradient(#00CCFF, #00CCFF);
+    background-size: 0% 0.2em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease-in-out;
+    text-decoration: none;
+    
+}
+
+#tilbake:hover{
+    list-style-type: none;
+    padding: 10px;
+    background-color: #61b0ff;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    color: white;
+    font-family: Inter, sans-serif;
+    background-size: 100% 0.2em;
+
+}
+
+
+
+
+.navbar {
+    display: flex;
+    background-color: #00CCFF;
+    position: sticky;
+    top: 0; 
+}
+
+
+
+.navbar > ul li {
+    display: inline;
+    padding: 30px;
+    background-color: #5aa2ed;
+    border-radius: 50px;
+    font-family: Inter, sans-serif;
+    background-image: linear-gradient(#51a0f7, #51a0f7);
+    background-size: 0% 0.2em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease-in-out;
+    text-decoration: none;
+}
+
+.navbar > ul li:hover {
+    display: inline;
+    padding: 30px;
+    background-color: #6ab2fd;
+    border-radius: 50px;
+    font-family: Inter, sans-serif;
+    background-size: 100% 0.2em;
+}
+
+
+.navbar ul{
+    margin-left: 40%;
+}
+
+img{
+    margin-left: 30px;
+}
+
+
+.profile-info {
+    width: 100%;
+    max-width: 500px;
+}
+
+.profile-info > td > tr {
+    padding: 5px 15px;
+}
+
+
+
+button {
+    width: 200px;
+    list-style-type: none;
+    padding: 20px;
+    background-color: #51a0f7;
+    border-radius: 50px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+    font-family: Inter, sans-serif;
+    background-image: linear-gradient(#00CCFF, #00CCFF);
+    background-size: 0% 0.2em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+
+
+button:hover {
+    width: 200px;
+    list-style-type: none;
+    padding: 20px;
+    background-color: #61b0ff;
+    border-radius: 50px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+    font-family: Inter, sans-serif;
+    background-size: 100% 0.2em;
+}
+
+
+
+#tilbake{
+    list-style-type: none;
+    padding: 10px;
+    /*background-color: #00CCFF;*/
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    /*color: white;*/
+    font-family: Inter, sans-serif;
+}
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-gap: 40px;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+      "title title title"
+      "underitle underitle underitle"
+      "pagination pagination pagination";
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .grid-container {
+      display: grid;
+      grid-gap: 40px;
+      justify-content: center;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+        "title title"
+        "underitle underitle"
+        "pagination pagination";
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .grid-container {
+      display: grid;
+      grid-gap: 40px;
+      justify-content: center;
+      grid-template-columns: auto;
+      grid-template-areas:
+        "title"
+        "underitle"
+        "pagination";
+    }
+    .grid-item {
+      margin: 0 auto;
+      justify-content: center;
+    }
+  }
+  
+  svg {
+    align-content: center;
+    justify-self: center;
+  }
+  
+  .title {
+    grid-area: title;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .underTitle {
+    grid-area: underitle;
+    color: #d81f27;
+  }
+  
+  .pagination {
+    grid-area: pagination;
+    justify-self: center;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+
+  
+  h1 {
+    color: rgb(0, 0, 0);
+  }
+  
+  p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  body {
+    background-color: #fff;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+   

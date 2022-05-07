@@ -1,0 +1,66 @@
+stages:
+  - commitlint
+  - test
+
+image: ubuntu:latest
+
+commitlint:
+  stage: commitlint
+  script:
+    # Seed tzdata {{{
+    - export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+    # Makes sure the pipeline doesn't stall on requiring user input
+    - echo "tzdata tzdata/Areas select Europe\ntzdata tzdata/Zones/Europe select Berlin" >> seed.txt
+    - debconf-set-selections seed.txt
+    # }}}
+    - apt update -qy && apt install -y curl xz-utils
+    # Node install {{{
+    # Hack: ubuntu:"latest" ships with node 10 (which is severely out of date for being latest; blame GitLab)
+    # Consequently, node has to be installed manually for commitlint. There's pre-built binaries; grab and extract
+    #
+    - curl https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz --output node-bin.tar.xz
+    - mkdir node-bin && tar -xf node-bin.tar.xz -C node-bin --strip-components=1
+    # Re-export PATH
+    - PATH=$(pwd)/node-bin/bin/:$PATH
+    # }}}
+    - npm install
+    - npx commitlint --from=HEAD~1
+
+# Not sure if it makes sense to break up the tests later on, as in having
+# a part of the pipeline deal with the frontend, and a part dealing with
+# the backend, but I imagine the integration tests for this may actually
+# need to be done as a part of the java tests.
+test:
+  stage: test
+  script:
+    # Dependencies {{{
+    - apt update -qy
+    - apt install -y curl unzip zip sed
+    - curl -s "https://get.sdkman.io" | bash
+    - source "$HOME/.sdkman/bin/sdkman-init.sh"
+    - sdk install maven
+    - sdk install java 17.0.2-open
+    # }}}
+    # Headless GUI testing {{{
+    # Useless at the time of writing, importing ahead of time to save pain
+    #- export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+    # Makes sure the pipeline doesn't stall on requiring user input
+    #- echo "tzdata tzdata/Areas select Europe\ntzdata tzdata/Zones/Europe select Berlin" >> seed.txt
+    #- debconf-set-selections seed.txt
+    # Grab packages required for the UI. Not sure if all of these are necessary if i.e. a browser is booted, but it really
+    # depends on how the tests are managed. Can nuke this later if necessary
+    # matchbox-window-manager is required to manage windows and their focus.
+    #- apt install -y xvfb xorg-dev libglu1-mesa libgl1-mesa-dev libxinerama1 libxcursor1 libgtk-3-0 matchbox-window-manager
+    - cd eventmarket
+    # }}}
+    # Execute backend tests {{{
+    - mvn verify
+    # }}}
+    # Execute frontend tests (? TODO: determine if necessary) {{{
+    # - Xvfb :10 -ac -screen 0 1920x1080x24 & disown
+    # - sleep 2 && DISPLAY=:10 matchbox-window-manager & disown
+    # - DISPLAY=:10 mvn verify  
+    - cd ../eventmarket-frontend && PATH=$(pwd)/node:$PATH ./node/npm test
+    # }}}
+
+# vim:sw=2

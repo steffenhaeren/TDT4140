@@ -1,0 +1,63 @@
+# Begin auto-generated {{{
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+# }}}
+# End auto-generated
+
+# Vim
+.vim
+
+# Eclipse (sourced from https://github.com/github/gitignore/blob/main/Global/Eclipse.gitignore) {{{
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+.externalToolBuilders/
+
+*.launch
+.factorypath
+# }}}
+# Node stuff
+node_modules
+
+# Downloaded automagically by a Maven plugin. Can't include it, it's a proper
+# node install.
+/eventmarket-frontend/node/*
